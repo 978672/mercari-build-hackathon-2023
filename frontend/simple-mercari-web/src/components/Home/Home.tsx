@@ -51,7 +51,6 @@ export const Home = () => {
       <div className = "loginWrapper">
         <h1>Log in</h1>
         <Login />
-        <p>password忘れた方</p>
       </div>
     </>
   );
