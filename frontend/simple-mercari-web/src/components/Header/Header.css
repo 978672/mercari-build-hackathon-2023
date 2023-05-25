@@ -1,6 +1,12 @@
 header {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  
+}
+
+.headerWrapper{
+  width: 100%;
+  display: flex;
+  padding:50px;
 }
 
 .LogoutButtonContainer {
@@ -21,13 +27,15 @@ header {
   position: fixed;
   right: 16rem;
   top: 2rem;
-  width: 100px;
+  width: 200px;
 }
 
 .searchContainer{
   position: fixed;
   left: 16rem;
   top: 2rem;
+  font-family: FontAwesome;
+  padding:30px;
 }
 
 .logo{
@@ -39,7 +47,7 @@ header {
 
 #MerSearchInput{
   box-sizing: border-box;
-  width: 100%;
+  width: 70px;
   height: 100%;
   margin: 0px;
   padding: 0px 16px;
@@ -60,6 +68,7 @@ header {
 
 .navButton{
   padding: 8px;
+  width:30%;
 }
 .navButton:hover{
   background-color: var(--alias-color-border-primary-highlight);
@@ -67,7 +76,7 @@ header {
 }
 
 header{
-  margin-bottom: 50px;
+  margin: 100px;
 }
 
 .LogoContainer:hover{
@@ -75,4 +84,14 @@ header{
 }
 .SearchBar{
   width: 300% !important; 
+}
+
+.use_icon{
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

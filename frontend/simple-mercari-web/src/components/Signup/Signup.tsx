@@ -39,6 +39,7 @@ export const Signup = () => {
   return (
     <div>
       <div className="Signup">
+        <div className="Signup-innner"></div>
         <label id="MerInputLabel">User Name</label>
         <input
           type="text"
