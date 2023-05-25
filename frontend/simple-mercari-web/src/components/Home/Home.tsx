@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { fetcher } from "../../helper";
 import "react-toastify/dist/ReactToastify.css";
+import "./Home.css";
 
 interface Item {
   id: number;
@@ -42,12 +43,15 @@ export const Home = () => {
 
   const signUpAndSignInPage = (
     <>
-      <div>
+      <div className = "signupWrapper">
+        <h1>Sign Up</h1>
         <Signup />
       </div>
-      or
-      <div>
+      
+      <div className = "loginWrapper">
+        <h1>Log in</h1>
         <Login />
+        <p>password忘れた方</p>
       </div>
     </>
   );
