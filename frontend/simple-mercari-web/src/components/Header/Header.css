@@ -3,11 +3,11 @@ header {
   flex-direction: row;  
 }
 
-.headerWrapper{
+/* .headerWrapper{
   width: 100%;
   display: flex;
   padding:50px;
-}
+} */
 
 .LogoutButtonContainer {
   position: fixed;
