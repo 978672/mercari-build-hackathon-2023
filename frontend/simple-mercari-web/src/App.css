@@ -104,6 +104,7 @@
   padding: 16px;
   border-radius: 4px;
   color: var(--alias-color-text-primary-default);
+  border: #222427 solid 1px;
 }
 
 .item img {
@@ -203,14 +204,34 @@ div.item:hover{
 .item-container {
   display: flex;
   align-items: flex-start;
+  width:90%;
+  align-items: center;
+  margin-top:45px;
 }
 
-.image-column {
-  margin-right: 20px; 
+.column {
+  /* margin-right: 20px;  */
+  width:50%;
+  position: relative;
+}
+
+.column img{
+  width: 95%;
+  align-self: flex-start;
+  object-fit: contain; 
+  text-align: center;
 }
 
 .content-column {
-  flex: 1;
+  width:85%;
+  margin: 0 auto;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+	padding:15px;
 }
 
 .ItemDetail {
@@ -233,8 +254,3 @@ div.item:hover{
 
 
 
-.btn-danger {
-  color: #fff;
-  background-color: #FF333F;
-  border-color: #FF333F;
-}

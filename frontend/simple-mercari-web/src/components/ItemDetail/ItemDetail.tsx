@@ -93,37 +93,47 @@ export const ItemDetail = () => {
       <MerComponent condition={() => item !== undefined}>
         {item && itemImage && (
           <div className="item-container">
-          <div className="image-column">
-            <img
-              height={480}
-              width={480}
-              src={URL.createObjectURL(itemImage)}
-              alt="item"
-              onClick={() => navigate(`/item/${item.id}`)}
-            />
-          </div>
-          <div className="content-column">
-            <p>
-              <h2>{item.name}</h2>
-              <br />
-              <span>Price: {item.price}</span>
-              <br />
-              <span>UserID: {item.user_id}</span>
-              <br />
-              <span>Category: {item.category_name}</span>
-              <br />
-              <span>Description: {item.description}</span>
-            </p>
-            {item.status == ItemStatus.ItemStatusSoldOut ? (
-              <button disabled={true} onClick={onSubmit} id="MerDisableButton">
-                SoldOut
-              </button>
-            ) : (
-              <button onClick={onSubmit} id="MerButton">
-                Purchase
-              </button>
-            )}
-          </div>
+            <div className="column">
+              <img
+                height={480}
+                width={480}
+                src={URL.createObjectURL(itemImage)}
+                alt="item"
+                onClick={() => navigate(`/item/${item.id}`)}
+              />
+            </div>
+            <div className="column">
+              <div className="content-column">
+                <h2>{item.name}</h2>
+                <br />
+                <h4>￥ {item.price}</h4>
+                <br />
+                
+                <span className="font-weight-bold">Description </span>
+                <br />
+                <span>{item.description}</span>
+                <br />
+
+                <br />
+                <span>UserID: {item.user_id}</span>
+                <br />
+                <span>Category: {item.category_name}</span>
+                <br />
+              </div>
+              {item.status == ItemStatus.ItemStatusSoldOut ? (
+                <button disabled={true} onClick={onSubmit} id="MerDisableButton">
+                  SoldOut
+                </button>
+              ) : (
+                <div className="buttons">
+                  <button onClick={onSubmit} id="MerButton">
+                    Purchase
+                  </button>
+                </div>  
+              )}
+              
+
+            </div>
         </div>
         )}
       </MerComponent>
