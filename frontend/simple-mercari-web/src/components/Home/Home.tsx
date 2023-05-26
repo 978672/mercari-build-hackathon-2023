@@ -44,12 +44,12 @@ export const Home = () => {
   const signUpAndSignInPage = (
     <>
       <div className = "SignupWrapper">
-        <h1>Sign Up</h1>
+        <h1 className="font-weight-bold">Sign Up</h1>
         <Signup />
       </div>
       
       <div className = "LoginWrapper">
-        <h1>Log in</h1>
+        <h1 className="font-weight-bold">Log in</h1>
         <Login />
       </div>
     </>
