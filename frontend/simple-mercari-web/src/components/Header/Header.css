@@ -1,6 +1,7 @@
 header {
   display: flex;
   /* flex-direction: row;   */
+  margin: 0;
 }
 
 /* .headerWrapper{
@@ -75,9 +76,7 @@ header {
   cursor: pointer;
 }
 
-header{
-  margin: 100px;
-}
+
 
 .LogoContainer:hover{
   cursor: pointer;

@@ -36,7 +36,6 @@ export const Header: React.FC = () => {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"></link>
     </head>
       <header>
-        
         {/* <div className="headerWtapper"> */}
           {/* <i className="bi bi-house-door-fill"></i> */}
           <Navbar bg="light" expand="lg">
