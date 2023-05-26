@@ -230,3 +230,11 @@ div.item:hover{
   align-items: center;
   justify-content: left;
 }
+
+
+
+.btn-danger {
+  color: #fff;
+  background-color: #FF333F;
+  border-color: #FF333F;
+}

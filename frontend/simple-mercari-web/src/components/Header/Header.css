@@ -4,6 +4,7 @@ header {
   margin: 0;
 }
 
+
 /* .headerWrapper{
   width: 100%;
   display: flex;
@@ -67,30 +68,33 @@ header {
   border-radius: 4px;
 }
 
-.navButton{
-  padding: 8px;
-  width:30%;
+span.navbar-brand:hover{
+  cursor: pointer;
 }
-.navButton:hover{
+
+button.btn.btn-danger {
+  color: #fff;
+  background-color: #FF333F;
+  border-color: #FF333F;
+}
+
+button.btn.btn-danger:hover{
+  background-color: var(--alias-color-background-attention-highlight);
+  cursor: pointer;
+}
+
+button.btn-outline-secondary {
+  /* color: #fff; */
+  /* background-color: var(--alias-color-border-primary-highlight); */
+  border-color: var(--alias-color-border-primary-highlight);
+}
+
+/* button.btn-outline-secondary:hover {
+  color: black;
   background-color: var(--alias-color-border-primary-highlight);
-  cursor: pointer;
-}
+  border-color: var(--alias-color-border-primary-highlight);
+} */
 
-
-
-.LogoContainer:hover{
-  cursor: pointer;
-}
-.SearchBar{
-  width: 300% !important; 
-}
-
-.use_icon{
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.nav-link:hover{
+  font-weight: bold;
 }
