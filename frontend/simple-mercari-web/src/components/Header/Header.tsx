@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
               >
               </Nav>
               <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
-              <Nav.Link onClick={() => navigate('/sell')}>Listening</Nav.Link>
+              <Nav.Link onClick={() => navigate('/sell')}>Listing</Nav.Link>
               <Nav.Link onClick={() => navigate(`/user/${cookies.userID}`)}>Mypage</Nav.Link>
               <Button variant="danger" onClick={onLogout}>logout</Button>{' '}
             </Navbar.Collapse>
