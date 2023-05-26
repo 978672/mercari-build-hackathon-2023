@@ -43,12 +43,12 @@ export const Home = () => {
 
   const signUpAndSignInPage = (
     <>
-      <div className = "signupWrapper">
+      <div className = "SignupWrapper">
         <h1>Sign Up</h1>
         <Signup />
       </div>
       
-      <div className = "loginWrapper">
+      <div className = "LoginWrapper">
         <h1>Log in</h1>
         <Login />
       </div>

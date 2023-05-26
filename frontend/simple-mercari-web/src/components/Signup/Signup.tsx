@@ -39,7 +39,6 @@ export const Signup = () => {
   return (
     <div>
       <div className="Signup">
-        <div className="Signup-innner"></div>
         <label id="MerInputLabel">User Name</label>
         <input
           type="text"
@@ -61,9 +60,12 @@ export const Signup = () => {
             setPassword(e.target.value);
           }}
         />
-        <button onClick={onSubmit} id="MerButton">
-          Signup
-        </button>
+        <div className="buttons">
+          <button onClick={onSubmit} id="MerButton">
+            Signup
+          </button>
+        </div>
+        
         {userID ? (
           <p>Use "{userID}" as UserID for login</p>
         ) : null}

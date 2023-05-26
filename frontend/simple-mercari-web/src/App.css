@@ -22,7 +22,7 @@
 
 #MerTextInput {
   box-sizing: border-box;
-  width: 50%;
+  width: 100%;
   height: 100%;
   padding: 16px;
   color: var(--alias-color-text-primary-default);
@@ -50,31 +50,32 @@
   fill: #fff;
   background-color: #ff333f;
   color: #fff;
-  font-size: 14px;
-  height: 36px;
-  width: 50%;
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
   min-width: 60px;
-  padding: 8px 16px;
+  padding: 16px;
   justify-content: center;
   appearance: none;
-  /* font-weight: 900; */
+  font-weight: 900;
   border: none;
   outline: none;
   cursor: pointer;
-  border-radius: 8%;
+  border-radius: 10px;
   box-sizing: border-box;
   text-align: center;
   display: inline-flex;
+  /* padding: 0, 10px; */
 }
 
 #MerButton:hover {
   fill: #fff;
   background-color: var(--alias-color-background-attention-highlight);
   color: #fff;
-  font-size: 14px;
-  height: 36px;
+  font-size: 20px;
+  height: 100%;
   min-width: 60px;
-  padding: 8px 16px;
+  padding: 16px;
   justify-content: center;
   border: none;
   appearance: none;

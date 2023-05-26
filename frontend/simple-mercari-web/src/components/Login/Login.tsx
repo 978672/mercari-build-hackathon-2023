@@ -60,9 +60,11 @@ export const Login = () => {
             setPassword(e.target.value);
           }}
         />
-        <button onClick={onSubmit} id="MerButton">
-          Login
-        </button>
+        <div className="buttons">
+          <button onClick={onSubmit} id="MerButton">
+            Login
+          </button>
+        </div>
       </div>
     </div>
   );
