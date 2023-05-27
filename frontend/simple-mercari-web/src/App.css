@@ -104,13 +104,14 @@
   padding: 16px;
   border-radius: 4px;
   color: var(--alias-color-text-primary-default);
-  border: #222427 solid 1px;
+  /* border: #222427 solid 1px; */
+  background-color: #F2F2F2;
 }
 
 .item img {
   height: 200px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .item p {
