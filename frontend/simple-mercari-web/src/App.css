@@ -200,6 +200,7 @@ div.item:hover{
 }
 
 
+
 /* ----- Item details ----- */
 /* Creates the two columns */
 .item-container {
@@ -253,5 +254,12 @@ div.item:hover{
   justify-content: left;
 }
 
+.UserProfileContainer{
+  width:100%;
+  padding:30px;
+  align-items: center;
+}
 
-
+.UserProfileInputs{
+  padding-right: 250px;
+}
