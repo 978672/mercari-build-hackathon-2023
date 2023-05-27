@@ -17,7 +17,8 @@ export const UserProfile: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [balance, setBalance] = useState<number>();
   const [addedbalance, setAddedBalance] = useState<number>();
-  const [cookies] = useCookies(["token"]);
+  const [cookies] = useCookies(["userID","token"]);
+
   const params = useParams();
 
   const fetchItems = () => {
@@ -82,23 +83,28 @@ export const UserProfile: React.FC = () => {
     <MerComponent>
       <div className="UserProfile">
         <div>
-          <div>
+          <div className="UserProfileContainer">
+            <p>Logined User ID: {cookies.userID}</p>
+            {/* cookie からnameを取ってきて表示できるようにする */}
             <h2>
               <span>Balance: {balance}</span>
             </h2>
-            <input
-              type="number"
-              name="balance"
-              id="MerTextInput"
-              placeholder="0"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setAddedBalance(Number(e.target.value));
-              }}
-              required
-            />
-            <button onClick={onBalanceSubmit} id="MerButton">
-              Add balance
-            </button>
+            <div className="UserProfileInputs">
+              <input
+                type="number"
+                name="balance"
+                id="MerTextInput"
+                placeholder="0"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setAddedBalance(Number(e.target.value));
+                }}
+                required
+              />
+              <button onClick={onBalanceSubmit} id="MerButton">
+                Add balance
+              </button>
+            </div>
+            
           </div>
 
           <div>
