@@ -10,10 +10,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/golang-jwt/jwt/v5"
-	"github.com/labstack/echo/v4"
 	"github.com/978672/mecari-build-hackathon-2023/backend/db"
 	"github.com/978672/mecari-build-hackathon-2023/backend/domain"
+	"github.com/golang-jwt/jwt/v5"
+	"github.com/labstack/echo/v4"
 	"github.com/pkg/errors"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -218,16 +218,20 @@ func (h *Handler) AddItem(c echo.Context) error {
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err)
 	}
+	//Control passing very big file
+	maxSize := int64(1024 * 1024)
+	if file.Size > maxSize {
+		return echo.NewHTTPError(http.StatusBadRequest, "file size is too large")
+	}
 
 	src, err := file.Open()
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err)
 	}
 	defer src.Close()
+	var dest bytes.Buffer
+	blob := &dest
 
-	var dest []byte
-	blob := bytes.NewBuffer(dest)
-	// TODO: pass very big file
 	// http.StatusBadRequest(400)
 	if _, err := io.Copy(blob, src); err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err)
@@ -276,8 +280,14 @@ func (h *Handler) Sell(c echo.Context) error {
 
 	// TODO: check req.UserID and item.UserID
 	// http.StatusPreconditionFailed(412)
-	// TODO: only update when status is initial
-	// http.StatusPreconditionFailed(412)
+
+	// Only update the item status if it is in the initial status
+	if item.Status == domain.ItemStatusInitial {
+		if err := h.ItemRepo.UpdateItemStatus(ctx, item.ID, domain.ItemStatusOnSale); err != nil {
+			return echo.NewHTTPError(http.StatusInternalServerError, err)
+		}
+	}
+
 	if err := h.ItemRepo.UpdateItemStatus(ctx, item.ID, domain.ItemStatusOnSale); err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err)
 	}
@@ -457,6 +467,11 @@ func (h *Handler) AddBalance(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusBadRequest, err)
 	}
 
+	// Check if the added balance is more than 0
+	if req.Balance <= 0 {
+		return echo.NewHTTPError(http.StatusBadRequest, "Invalid balance amount")
+	}
+
 	userID, err := getUserID(c)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusUnauthorized, err)
@@ -560,6 +575,11 @@ func (h *Handler) Purchase(c echo.Context) error {
 			return echo.NewHTTPError(http.StatusNotFound, "Item not found")
 		}
 		return echo.NewHTTPError(http.StatusInternalServerError, err)
+	}
+
+	// Check if you have enough balance
+	if user.Balance < item.Price {
+		return echo.NewHTTPError(http.StatusBadRequest, "Balance is not enough.")
 	}
 
 	// Make not possible to buy own items. If you buy your own items you get http.StatusPreconditionFailed(412)
