@@ -83,7 +83,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  border-radius: 8%;
+  border-radius: 10px;
 }
 
 /* userid */
