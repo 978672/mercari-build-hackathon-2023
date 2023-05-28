@@ -83,7 +83,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  border-radius: 8%;
+  border-radius: 10px;
 }
 
 /* userid */
@@ -276,6 +276,7 @@ div.item:hover{
 
 /* ----- User profile ----- */
 .UserProfile {
+
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -284,9 +285,11 @@ div.item:hover{
 }
 
 .UserProfileContainer{
-  width:100%;
-  padding:30px;
-  align-items: center;
+  width:95%;
+  /* padding:30px; */
+  /* align-items: center; */
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .UserProfileInputs{
