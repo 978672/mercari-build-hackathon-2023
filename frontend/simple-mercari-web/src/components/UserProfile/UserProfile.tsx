@@ -75,10 +75,7 @@ export const UserProfile: React.FC = () => {
       .then((_) => window.location.reload())
       .catch((err) => {
         console.log(`POST error:`, err);
-        toast.error("Balance cannot be negative");
-        // TODO:toastが出たあと、reloadしてもtoastが残るようにしたい
-      // }).finally(() => {
-      //   window.location.reload();
+        toast.error(err.message);
       });
   };
 
@@ -95,9 +92,6 @@ export const UserProfile: React.FC = () => {
             <div className="UserProfileInputs">
               <input
                 type="number"
-                // TODO:minusが入らないようにする
-                pattern="^[0-9]+$"
-                min="0"
                 name="balance"
                 id="MerTextInput"
                 placeholder="0"
