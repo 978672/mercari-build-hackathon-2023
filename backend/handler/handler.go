@@ -144,6 +144,18 @@ func (h *Handler) Register(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusBadRequest, err)
 	}
 
+	if req.Name == "" && req.Password == ""{
+		return echo.NewHTTPError(http.StatusBadRequest, "Name and Password are required")
+	}
+	
+	if req.Name == "" {
+        return echo.NewHTTPError(http.StatusBadRequest, "Name is required")
+    }
+
+    if req.Password == "" {
+        return echo.NewHTTPError(http.StatusBadRequest, "Password is required")
+    }
+
 	hash, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err)
@@ -153,7 +165,7 @@ func (h *Handler) Register(c echo.Context) error {
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err)
 	}
-
+	fmt.Printf("Registered user: %s", req.Name)
 	return c.JSON(http.StatusOK, registerResponse{ID: userID, Name: req.Name})
 }
 
