@@ -2,6 +2,7 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import logo from '../../logo.png';
+import { useState } from "react";
 
 // bootstrap
 import Button from 'react-bootstrap/Button';
@@ -15,11 +16,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const Header: React.FC = () => {
   const [cookies, _, removeCookie] = useCookies(["userID", "token"]);
   const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("");
 
   const onLogout = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
     removeCookie("userID");
     removeCookie("token");
+  };
+
+  const handleSearch = () => {
+    navigate(`/items/search/${searchValue}`);
   };
 
   return (
@@ -46,8 +52,14 @@ export const Header: React.FC = () => {
                   className="me-2"
                   aria-label="Search"
                   // id="MerTextInput"
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      handleSearch();
+                    }
+                  }}
                 />
-                <Button variant="outline-secondary"><i className="bi bi-search"></i></Button>{' '}
+                <Button variant="outline-secondary" onClick={handleSearch}><i className="bi bi-search"></i></Button>{' '}
               </Form>
               <Nav
                 className="me-auto my-2 my-lg-0"
