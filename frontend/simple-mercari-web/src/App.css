@@ -86,15 +86,39 @@
   border-radius: 8%;
 }
 
+/* userid */
+.UserInfoWrapper{
+  width:95%;
+  margin: 0 auto;
+}
+
 /* ----- Item list ----- */
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 16px;
-  margin: 0 40px;
+  /* margin: 0 40px; */
+  /* justify-content: center;
+  margin: 0 auto; */
 }
 
+
+/* ----- Item list responsive ----- */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ----- Item ----- */
 .item {
   display: flex;
   flex-direction: column;
@@ -104,13 +128,14 @@
   padding: 16px;
   border-radius: 4px;
   color: var(--alias-color-text-primary-default);
-  border: #222427 solid 1px;
+  /* border: #222427 solid 1px; */
+  background-color: #F2F2F2;
 }
 
 .item img {
   height: 200px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .item p {
@@ -175,6 +200,11 @@ div.item:hover{
   margin-top: 5%;
 }
 
+.ItemList-container{
+  width:95%;
+  margin: 0 auto;
+}
+
 .ItemList {
   background-color: #222427;
   min-height: 8vh;
@@ -197,6 +227,7 @@ div.item:hover{
 .AllInputs * {
   margin: 5px !important;
 }
+
 
 
 /* ----- Item details ----- */
@@ -252,5 +283,12 @@ div.item:hover{
   justify-content: left;
 }
 
+.UserProfileContainer{
+  width:100%;
+  padding:30px;
+  align-items: center;
+}
 
-
+.UserProfileInputs{
+  padding-right: 250px;
+}

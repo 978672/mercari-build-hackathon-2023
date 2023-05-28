@@ -58,9 +58,13 @@ export const Home = () => {
   const itemListPage = (
     <MerComponent>
       <div>
-        <span>
-          <p>Logined User ID: {cookies.userID}</p>
-        </span>
+        <div className="UserInfoWrapper">
+          <span>
+            <p>Logined User ID: {cookies.userID}</p>
+            {/* cokkies から nameを取ってこれるように*/}
+            {/* <p>welcome -- san</p> */}
+          </span>
+        </div>
         <ItemList items={items} />
       </div>
     </MerComponent>

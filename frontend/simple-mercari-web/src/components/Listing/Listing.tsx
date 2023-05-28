@@ -161,9 +161,11 @@ export const Listing: React.FC = () => {
               onChange={onFileChange}
               required
             />
-            <button type="submit" id="MerButton">
-              List this item
-            </button>
+            <div className="listingButton">
+              <button type="submit" id="MerButton" >
+                List this item
+              </button>
+            </div>
           </div>
         </form>
       </div>
