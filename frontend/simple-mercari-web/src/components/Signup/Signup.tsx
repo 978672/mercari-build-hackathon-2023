@@ -32,7 +32,7 @@ export const Signup = () => {
       })
       .catch((err) => {
         console.log(`POST error:`, err);
-        toast.error(err.message);
+        toast.error("New account is NOT created");
       });
   };
 
