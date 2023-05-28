@@ -166,7 +166,6 @@ func (h *Handler) Login(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusBadRequest, err)
 	}
 
-	//リクエストのuserID をlogging
 	user, err := h.UserRepo.GetUser(ctx, req.UserID)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, err)
@@ -456,10 +455,6 @@ func (h *Handler) AddBalance(c echo.Context) error {
 	req := new(addBalanceRequest)
 	if err := c.Bind(req); err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err)
-	}
-
-	if req.Balance < 0 {
-		return echo.NewHTTPError(http.StatusBadRequest, "Balance cannot be negative")
 	}
 
 	userID, err := getUserID(c)

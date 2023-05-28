@@ -44,7 +44,7 @@ func (r *UserDBRepository) AddUser(ctx context.Context, user domain.User) (int64
 
 func (r *UserDBRepository) GetUser(ctx context.Context, id int64) (domain.User, error) {
 	row := r.QueryRowContext(ctx, "SELECT * FROM users WHERE id = ?", id)
-	//userを全部取ってくる
+
 	var user domain.User
 	return user, row.Scan(&user.ID, &user.Name, &user.Password, &user.Balance)
 }
