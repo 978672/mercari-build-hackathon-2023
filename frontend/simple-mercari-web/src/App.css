@@ -86,15 +86,39 @@
   border-radius: 8%;
 }
 
+/* userid */
+.UserInfoWrapper{
+  width:95%;
+  margin: 0 auto;
+}
+
 /* ----- Item list ----- */
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 16px;
-  margin: 0 40px;
+  /* margin: 0 40px; */
+  /* justify-content: center;
+  margin: 0 auto; */
 }
 
+
+/* ----- Item list responsive ----- */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ----- Item ----- */
 .item {
   display: flex;
   flex-direction: column;
@@ -174,6 +198,11 @@ div.item:hover{
 .Listing {
   width: 100%;
   margin-top: 5%;
+}
+
+.ItemList-container{
+  width:95%;
+  margin: 0 auto;
 }
 
 .ItemList {
