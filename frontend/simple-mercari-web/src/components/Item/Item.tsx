@@ -44,7 +44,7 @@ export const Item: React.FC<{ item: Item }> = ({ item }) => {
         width={480}
       />
       <p>
-        <h2>{item.name}</h2>
+        <h3>{item.name}</h3>
         <span>{item.category_name}</span>
         <span>¥ {item.price} </span>
       </p>
