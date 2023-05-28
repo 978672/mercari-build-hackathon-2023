@@ -1,0 +1,31 @@
+h1{
+	color:#4DC9FF;
+	text-align: center;
+	margin-top: 0;
+	/* font-weight: 900; */
+}
+
+
+/* #MerButton.signupWrapper{
+	background-color: yellow;
+} */
+
+.SignupWrapper{
+	/* padding-bottom:100px; */
+	border-bottom: 2px solid #CCC;
+	padding: 30px 55px 100px 55px;
+	/* font-weight: 900; */
+
+}
+
+.Signup, .Login{
+	padding:0 300px;
+}
+
+.buttons {
+	padding:15px 0;
+}
+
+.LoginWrapper{
+	padding:30px 55px;
+} 

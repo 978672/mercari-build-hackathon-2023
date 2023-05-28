@@ -11,9 +11,10 @@
   min-height: 8vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: left;
   font-size: calc(10px + 1vmin);
+  background-color: white;
   color: black;
 }
 
@@ -23,26 +24,21 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 10px 16px;
+  padding: 16px;
   color: var(--alias-color-text-primary-default);
   font-weight: normal;
-  font-size: 16px;
-  line-height: 1.4em;
+  font-size: 20px;
   background-color: transparent;
-  border: none;
-  border-radius: 4px 0px 0px 4px;
-  outline: none;
-  appearance: none;
-  color: var(--alias-color-text-primary-default);
   background-color: var(--alias-color-background-secondary-default);
   border: 1px solid var(--alias-color-border-primary-default);
   border-radius: 4px;
+  display: block;
+  -webkit-box-flex: 1;
 }
 
 #MerInputLabel {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.4em;
   cursor: default;
   align-items: flex-start;
@@ -54,28 +50,32 @@
   fill: #fff;
   background-color: #ff333f;
   color: #fff;
-  font-size: 14px;
-  height: 36px;
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
   min-width: 60px;
-  padding: 8px 16px;
+  padding: 16px;
   justify-content: center;
-  border: none;
   appearance: none;
   font-weight: 900;
   border: none;
   outline: none;
   cursor: pointer;
-  border-radius: 8%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-flex;
+  /* padding: 0, 10px; */
 }
 
 #MerButton:hover {
   fill: #fff;
   background-color: var(--alias-color-background-attention-highlight);
   color: #fff;
-  font-size: 14px;
-  height: 36px;
+  font-size: 20px;
+  height: 100%;
   min-width: 60px;
-  padding: 8px 16px;
+  padding: 16px;
   justify-content: center;
   border: none;
   appearance: none;
@@ -104,6 +104,7 @@
   padding: 16px;
   border-radius: 4px;
   color: var(--alias-color-text-primary-default);
+  border: #222427 solid 1px;
 }
 
 .item img {
@@ -203,14 +204,34 @@ div.item:hover{
 .item-container {
   display: flex;
   align-items: flex-start;
+  width:90%;
+  align-items: center;
+  margin-top:45px;
 }
 
-.image-column {
-  margin-right: 20px; 
+.column {
+  /* margin-right: 20px;  */
+  width:50%;
+  position: relative;
+}
+
+.column img{
+  width: 95%;
+  align-self: flex-start;
+  object-fit: contain; 
+  text-align: center;
 }
 
 .content-column {
-  flex: 1;
+  width:85%;
+  margin: 0 auto;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+	padding:15px;
 }
 
 .ItemDetail {
@@ -230,3 +251,6 @@ div.item:hover{
   align-items: center;
   justify-content: left;
 }
+
+
+

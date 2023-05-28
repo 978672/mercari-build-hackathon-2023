@@ -1,7 +1,15 @@
 header {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row;   */
+  margin: 0;
 }
+
+
+/* .headerWrapper{
+  width: 100%;
+  display: flex;
+  padding:50px;
+} */
 
 .LogoutButtonContainer {
   position: fixed;
@@ -21,13 +29,15 @@ header {
   position: fixed;
   right: 16rem;
   top: 2rem;
-  width: 100px;
+  width: 200px;
 }
 
 .searchContainer{
   position: fixed;
   left: 16rem;
   top: 2rem;
+  font-family: FontAwesome;
+  padding:30px;
 }
 
 .logo{
@@ -39,7 +49,7 @@ header {
 
 #MerSearchInput{
   box-sizing: border-box;
-  width: 100%;
+  width: 70px;
   height: 100%;
   margin: 0px;
   padding: 0px 16px;
@@ -58,21 +68,33 @@ header {
   border-radius: 4px;
 }
 
-.navButton{
-  padding: 8px;
+span.navbar-brand:hover{
+  cursor: pointer;
 }
-.navButton:hover{
+
+button.btn.btn-danger {
+  color: #fff;
+  background-color: #FF333F;
+  border-color: #FF333F;
+}
+
+button.btn.btn-danger:hover{
+  background-color: var(--alias-color-background-attention-highlight);
+  cursor: pointer;
+}
+
+button.btn-outline-secondary {
+  /* color: #fff; */
+  /* background-color: var(--alias-color-border-primary-highlight); */
+  border-color: var(--alias-color-border-primary-highlight);
+}
+
+/* button.btn-outline-secondary:hover {
+  color: black;
   background-color: var(--alias-color-border-primary-highlight);
-  cursor: pointer;
-}
+  border-color: var(--alias-color-border-primary-highlight);
+} */
 
-header{
-  margin-bottom: 50px;
-}
-
-.LogoContainer:hover{
-  cursor: pointer;
-}
-.SearchBar{
-  width: 300% !important; 
+.nav-link:hover{
+  font-weight: bold;
 }
