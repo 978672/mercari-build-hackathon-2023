@@ -108,7 +108,6 @@ export const UserProfile: React.FC = () => {
           </div>
 
           <div>
-            <h2>Item List</h2>
             {<ItemList items={items} />}
           </div>
         </div>
