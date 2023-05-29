@@ -32,7 +32,7 @@ export const Login = () => {
       })
       .catch((err) => {
         console.log(`POST error:`, err);
-        toast.error("We cannot find an account");
+        toast.error(err.message);
       });
   };
 
